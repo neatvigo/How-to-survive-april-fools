@@ -77,9 +77,14 @@
     <source src="audio.m4a" type="audio/mp4" />
   </audio>
 
+  <!-- POPUP SOUND: replace popup.mp3 with your sound file name -->
+  <audio id="popupsound">
+    <source src="popup.mp3" type="audio/mp4" />
+  </audio>
+
   <div id="popup">
     <p>you've been rickrolled by neatvigo HAHAHA</p>
-    <img src="https://media.tenor.com/x8v1oNUOmg4AAAAC/rickroll-roll.gif" alt="rickroll" />
+    <img src="https://media1.tenor.com/m/bgBQwUxX8VkAAAAd/cat-meme-laughing-gif.gif" alt="lol" />
   </div>
 
   <script>
@@ -88,9 +93,9 @@
       document.getElementById('vid').play();
       document.getElementById('aud').play();
       setTimeout(() => {
-        const popup = document.getElementById('popup');
-        popup.style.display = 'flex';
-      }, 5000);
+        document.getElementById('popup').style.display = 'flex';
+        document.getElementById('popupsound').play();
+      }, 3000);
     }
   </script>
 
