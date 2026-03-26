@@ -13,21 +13,53 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      cursor: pointer;
     }
     video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+    #overlay {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    #overlay button {
+      font-size: 24px;
+      padding: 20px 40px;
+      cursor: pointer;
+      border: none;
+      border-radius: 12px;
+      background: #fff;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <video autoplay loop muted playsinline>
-    <source src="How-to-survive.mp4" type="video/mp4" />
-    Your pcs older than my grandma
+
+  <div id="overlay">
+    <button onclick="start()">Click to continue</button>
+  </div>
+
+  <video id="vid" loop muted playsinline>
+    <source src="rickroll.mp4" type="video/mp4" />
   </video>
-  <audio autoplay loop>
+  <audio id="aud" loop>
     <source src="audio.m4a" type="audio/mp4" />
   </audio>
+
+  <script>
+    function start() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('vid').play();
+      document.getElementById('aud').play();
+    }
+  </script>
+
 </body>
 </html>
